@@ -1,6 +1,8 @@
 # RAS
 RFID Attendance System
 
+Code written by Terry Lim with assistance from Eswaran.
+
 How to update Nominal Roll:
 1. In the SD card, there is a file called NR.csv. In it contains 3 columns.
 2. The 1st column contains the card's RFID numbers. Unless new cards are addd, there should not be any need to update this. Otherwise, simply type their RFID into this column.
