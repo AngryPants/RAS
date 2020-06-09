@@ -61,7 +61,6 @@ void RAS::Begin() {
         s_PreviousLCDPrintTime = RTClib::now().unixtime();
         Serial.println(F("SD Card initialisation failed."));
         while (true) {} // If this fails, do not continue.
-        return;
     }
 
     // Initialise RFID Sensor
@@ -183,7 +182,6 @@ bool RAS::LoadNominalRoll() {
         s_PreviousLCDPrintTime = RTClib::now().unixtime();
         Serial.println(F("Nominal roll load failed."));
         while (true) {} // If this fails, do not continue.
-        // return false;
     }
 
     Serial.println(F("Nominal roll loading. Please wait..."));
