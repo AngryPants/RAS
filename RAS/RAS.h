@@ -66,7 +66,7 @@ private:
     static unsigned int s_NumPerson; // Number of people loaded from the nominal roll.
     static unsigned int s_NumIn; // Number of people who signed in.
 
-    // Scanning
+    // RFID Scanning
     static unsigned int s_PreviousCard; // What was the last card to be scanned?
     static unsigned long s_PreviousScanTime; // When was the previous card scanned?
 

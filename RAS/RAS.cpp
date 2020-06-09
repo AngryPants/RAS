@@ -29,6 +29,22 @@ void RAS::Begin() {
     Wire.begin();
     s_RTC.setClockMode(false); // Set the clock mode to 24h.
 
+    // Initialise LED(s)
+    pinMode(LED_BLUE, OUTPUT);
+    pinMode(LED_YELLOW, OUTPUT);
+    pinMode(LED_RED, OUTPUT);
+
+    // Initialise LCD
+    s_LCD.begin();
+
+    // LCD Variable(s)
+    s_NameRotationIndex = 0;
+    s_PreviousLCDPrintTime = RTClib::now().unixtime() - LCD_MESSAGE_DURATION;
+    s_LCD.clear();
+    s_LCD.setCursor(0, 0);
+    s_LCD.print(String(F("System Boot")));
+    LightLED(true, true, true);
+
     /* By default, the default digitalWrite state of the pins are set to LOW.
     When that happens, for some reason both the SD Card Reader & RFID Scanner are using the same SPI Bus or some shit and RFID Sensor will fail.
     One remedy is to use digitalWrite(PIN_SD_CS, HIGH) BEFORE initialising RFID Sensor. Other way is to just initialise SD Reader first, since it
@@ -39,36 +55,25 @@ void RAS::Begin() {
     
     // Initialise SD Card Reader
     if (!SD.begin(PIN_SD_CS)) {
+        s_LCD.clear();
+        s_LCD.setCursor(0, 0);
+        s_LCD.print(String(F("SD Init Fail")));
+        s_PreviousLCDPrintTime = RTClib::now().unixtime();
         Serial.println(F("SD Card initialisation failed."));
+        while (true) {} // If this fails, do not continue.
         return;
     }
 
     // Initialise RFID Sensor
     s_RFIDSensor.PCD_Init();
-    delay(4); // Optional delay. Some board do need more time after init to be ready, see Readme
+    delay(4); // Optional delay. Some board do need more time after init to be ready, see MFRC522 Readme.
     Serial.print(F("MFRC522 Card Reader Details: "));
     s_RFIDSensor.PCD_DumpVersionToSerial();  // Show details of PCD - MFRC522 Card Reader details
-
-    // Initialise LCD
-    s_LCD.begin();
-
-    // Initialise LED(s)
-    pinMode(LED_BLUE, OUTPUT);
-    pinMode(LED_YELLOW, OUTPUT);
-    pinMode(LED_RED, OUTPUT);
-
-    // Scanning Variable(s)
+    
+    // RFID Scanning Variable(s)
     s_PreviousScanTime = RTClib::now().unixtime() - COOLDOWN_DURATION;
     s_PreviousCard = 0;
 
-    // LCD Variable(s)
-    s_NameRotationIndex = 0;
-    s_PreviousLCDPrintTime = RTClib::now().unixtime() - LCD_MESSAGE_DURATION;
-    s_LCD.clear();
-    s_LCD.setCursor(0, 0);
-    s_LCD.print(String(F("System Boot")));
-    LightLED(true, true, true);
-    
     // Load nominal roll from SD Card.
     LoadNominalRoll();
     
@@ -177,7 +182,8 @@ bool RAS::LoadNominalRoll() {
         s_LCD.print(String(F("NR Load Fail")));
         s_PreviousLCDPrintTime = RTClib::now().unixtime();
         Serial.println(F("Nominal roll load failed."));
-        return false;
+        while (true) {} // If this fails, do not continue.
+        // return false;
     }
 
     Serial.println(F("Nominal roll loading. Please wait..."));
