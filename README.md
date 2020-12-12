@@ -1,4 +1,4 @@
-# RAS (RFID Attendance System)
+# RFID Attendance System (RAS)
 Code written by Lim Ngian Xin Terry (Software Guy) with assistance from Eswaran s/o Saravanan (Hardware Guy).
 
 Built for the Arduino Uno.
