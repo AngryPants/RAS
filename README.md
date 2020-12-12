@@ -18,7 +18,7 @@ How to update Nominal Roll:
 How to read logs:
 1. All logs are stored in the SD Card's LOGS folder.
 2. The logs are stored in a text file with their date on it, in a YYYYMMDD format. For example, 20210629.txt would be the logs for the date 2021-06-29.
-3. The logs will store who is absent, signed in, signed out, and their time.
+3. The logs will store who is absent, signed in, signed out, and the time.
 
 How to set time (When the clock module's battery has run out and changed):
 1. Connect the Arduino to your PC, and upload the TimeSet/TimeSet.ino file to it.
