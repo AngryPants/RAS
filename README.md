@@ -28,7 +28,7 @@ How to set time (When the clock module's battery has run out and changed):
 What is MidnightSet/MidnightSet.ino for?
 1. It is what I used to set the time to almost midnight to test if the midnight reboot works without issues. You should not need it.
 
-Important Links (If you want to change the code or something. No idea why you would though.):
+Important Links (If you want to change the code or something.):
 This assumes that you have a fairly good knowledge in C++ or C programming. 
 1. Where is this repository hosted? [https://github.com/TypeDefinition/RAS]
 2. What is a SPI? [https://www.arduino.cc/en/reference/SPI]
