@@ -30,10 +30,10 @@ What is MidnightSet/MidnightSet.ino for?
 
 Important Links (If you want to change the code or something. No idea why you would though.):
 This assumes that you have a fairly good knowledge in C++ or C programming. 
-1. Where is this repository hosted? https://github.com/TypeDefinition/RAS
-2. What is a SPI? https://www.arduino.cc/en/reference/SPI
-3. What is the naming convention of files stored in the SD Card? 8.3 Filename. https://www.arduino.cc/en/Reference/SDCardNotes
-4. What is the SD Card Format? FAT16 & FAT32. https://www.arduino.cc/en/Reference/SDCardNotes
+1. Where is this repository hosted? [https://github.com/TypeDefinition/RAS]
+2. What is a SPI? [https://www.arduino.cc/en/reference/SPI]
+3. What is the naming convention of files stored in the SD Card? 8.3 Filename. [https://www.arduino.cc/en/Reference/SDCardNotes]
+4. What is the SD Card Format? FAT16 & FAT32. [https://www.arduino.cc/en/Reference/SDCardNotes]
 
 Important Notes:
 1. Do not power cycle or restart the device in the middle of the day!
