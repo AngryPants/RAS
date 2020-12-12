@@ -1,6 +1,4 @@
-# RAS
-RFID Attendance System
-
+# RAS (RFID Attendance System)
 Code written by Lim Ngian Xin Terry (Software Guy) with assistance from Eswaran s/o Saravanan (Hardware Guy).
 
 How to update Nominal Roll:
