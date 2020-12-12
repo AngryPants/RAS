@@ -10,7 +10,7 @@ How to update Nominal Roll:
 4. The 3rd column contains the last 4 digits of the personnels' NRIC.
 5. ANY SPACES ARE ALSO CONSIDERED A CHARACTER!
 6. DO NOT RENAME THE FILE!
-7. THE DEVICE CAN ONLY SUPPORT UP TO 20 PEOPLE MAXIMUM!
+7. THE DEVICE CAN ONLY SUPPORT UP TO 20 PEOPLE MAXIMUM! (Arduino Uno RAM Limitation)
 8. If you are using a blank SD card, copy RAS/NR.csv, edit it and upload it to the root folder of the SD card.
 
 How to read logs:
