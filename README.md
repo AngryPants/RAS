@@ -1,7 +1,7 @@
 # RAS
 RFID Attendance System
 
-Code written by Terry Lim with assistance from Eswaran.
+Code written by Lim Ngian Xin Terry (Software Guy) with assistance from Eswaran s/o Saravanan (Hardware Guy).
 
 How to update Nominal Roll:
 1. In the SD card, there is a file called NR.csv. In it contains 3 columns.
@@ -30,7 +30,7 @@ What is MidnightSet/MidnightSet.ino for?
 
 Important Links (If you want to change the code or something. No idea why you would though.):
 This assumes that you have a fairly good knowledge in C++ or C programming. 
-1. Where is this repository hosted? https://github.com/AngryPants/RAS
+1. Where is this repository hosted? https://github.com/TypeDefinition/RAS
 2. What is a SPI? https://www.arduino.cc/en/reference/SPI
 3. What is the naming convention of files stored in the SD Card? 8.3 Filename. https://www.arduino.cc/en/Reference/SDCardNotes
 4. What is the SD Card Format? FAT16 & FAT32. https://www.arduino.cc/en/Reference/SDCardNotes
