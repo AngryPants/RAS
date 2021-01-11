@@ -15,6 +15,12 @@
 #include "RAS_MathUtil.h"
 #include "RAS_Buffer.h"
 
+/* 
+For this case, #define is preferable to static const.
+This is because variables declared with static const are stored
+in SRAM (which we have very little of), and #define are stored in program memory.
+*/
+
 // Physical Pin(s) For SD Card Module
 #define PIN_SD_CS 4
 
@@ -62,6 +68,10 @@ private:
     // LCD Screen
     static LiquidCrystal_I2C s_LCD;
 
+    /*
+    It is important to note that for Arduinos, "int" is only 2 bytes.
+    Make sure to use "long" to get 4 bytes.
+    */
     // Nominal Roll
     static unsigned int s_NumPerson; // Number of people loaded from the nominal roll.
     static unsigned int s_NumIn; // Number of people who signed in.
